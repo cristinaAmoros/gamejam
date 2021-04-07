@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb2d;
     private Animator m_Animator;
+    float timer;
+    Boolean gir;
    
     
 
@@ -29,8 +33,7 @@ public class PlayerController : MonoBehaviour
         {
             gravity = gravity * -1;
             m_Animator.SetInteger("Correr", 1);
-            
-
+            gir = true;
         }
         if (gravity < 0)
         {
@@ -38,10 +41,22 @@ public class PlayerController : MonoBehaviour
         }
         else { transform.eulerAngles = new Vector3(0, 0, 0); }
         
-        
+        if(gir == true)
+        {
+            timer += Time.deltaTime;
+            _ = timer >= 0.1f;
+        }
 
         rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
         rb2d.gravityScale = gravity;
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("mort"))
+            {
+            SceneManager.LoadScene("mort");
+        }
+    }
+
 }
