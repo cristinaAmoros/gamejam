@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         {
             gravity = gravity * -1;
             m_Animator.SetInteger("Correr", 1);
-            gir = true;
+           // gir = true;
         }
         if (gravity < 0)
         {
@@ -41,12 +41,12 @@ public class PlayerController : MonoBehaviour
         }
         else { transform.eulerAngles = new Vector3(0, 0, 0); }
         
-        if(gir == true)
+       /* if(gir == true)
         {
             timer += Time.deltaTime;
             _ = timer >= 0.1f;
         }
-
+        */
         rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
         rb2d.gravityScale = gravity;
     }
@@ -56,6 +56,11 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("mort"))
             {
             SceneManager.LoadScene("mort");
+        }
+
+        if (collision.CompareTag("porta"))
+        {
+            SceneManager.LoadScene("victoria");
         }
     }
 
