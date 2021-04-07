@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemicController : MonoBehaviour
 {
-    public Rigidbody enemicRB;
+    public Rigidbody2D enemicRB;
     public Transform[] enemicPositions;
     public float enemicSpeed;
 
