@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public void menu()
+    {
+        SceneManager.LoadScene("Inici");
+    }
+
     public void start()
     {
         SceneManager.LoadScene("nivell_1");
