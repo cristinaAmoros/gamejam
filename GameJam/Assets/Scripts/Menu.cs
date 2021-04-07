@@ -1,18 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void start()
     {
-        
+        SceneManager.LoadScene("nivell_1");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Exit()
     {
-        
+        Application.Quit();
+    }
+
+    public void credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void next()
+    {
+        SceneManager.LoadScene("Final");
+    }
+
+    public void retorna()
+    {
+        SceneManager.LoadScene("nivell_1");
     }
 }

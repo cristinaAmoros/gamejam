@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Inici.unity
+    guid: e2102e2edaf2f4949a89e1032e27df50
+  - enabled: 1
     path: Assets/Scenes/nivell_1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: a374a2cb23af8f54ea4d32b98a92d12e
+  - enabled: 1
+    path: Assets/Scenes/mort.unity
+    guid: a4ea24aa747e38145b9c174da898edaf
+  - enabled: 1
+    path: Assets/Scenes/victoria.unity
+    guid: 680adf7ed3a889041a729ee029aabf11
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: 14ac66e168dceeb43b4e47cd74b2d64b
   m_configObjects: {}
