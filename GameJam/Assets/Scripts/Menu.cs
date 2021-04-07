@@ -12,9 +12,12 @@ public class Menu : MonoBehaviour
 
     public void start()
     {
-        SceneManager.LoadScene("nivell_1");
+        SceneManager.LoadScene("historia");
     }
-
+    public void part2()
+    {
+        SceneManager.LoadScene("historia1");
+    }
     public void Exit()
     {
         Application.Quit();
@@ -31,6 +34,10 @@ public class Menu : MonoBehaviour
     }
 
     public void retorna()
+    {
+        SceneManager.LoadScene("nivell_1");
+    }
+    public void comença()
     {
         SceneManager.LoadScene("nivell_1");
     }
