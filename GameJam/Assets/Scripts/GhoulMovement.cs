@@ -4,46 +4,69 @@ using UnityEngine;
 
 public class GhoulMovement : MonoBehaviour
 {
-    public float speed;
-    private Rigidbody2D rb;
-    bool facingLeft;
-    public int techo;
-
-
+    public int giro;
+    public int speed;
+    private Rigidbody2D rb2d;
+    private bool start;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb2d = GetComponent<Rigidbody2D>();
+        start = false;
     }
+
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
-        if (techo==1)
+        if (start)
         {
+            rb2d.velocity = new Vector2(-speed, rb2d.velocity.y);
+            if (speed > 0)
+            {
 
-            gameObject.transform.rotation = Quaternion.Euler(180, 0, 0);
+                gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+            }
+            else if (speed < 0)
+            {
+
+                gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+
+            }
+            if (giro == 1)
+            {
+                gameObject.transform.rotation = Quaternion.Euler(180, 0, 0);
+                if (speed > 0)
+                {
+
+                    gameObject.transform.rotation = Quaternion.Euler(180, 0, 0);
+
+                }
+                else if (speed < 0)
+                {
+
+                    gameObject.transform.rotation = Quaternion.Euler(180, 180, 0);
+
+                }
+            }
         }
     }
-
-
-
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision != null && !collision.collider.CompareTag("Player") && collision.collider.CompareTag("Ground"))
+        
+        if (collision.gameObject.CompareTag("MainCamera"))
         {
-            facingLeft = !facingLeft;
-        }
+            Destroy(this.gameObject);
 
-
-
-        if (facingLeft)
-        {
-            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        else
-        {
-            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-       
+        speed = -speed;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("MainCamera"))
+        {
+            start = true;
+        }
+
+    }
+
 }

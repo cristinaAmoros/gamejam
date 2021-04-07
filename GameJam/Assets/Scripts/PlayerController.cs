@@ -25,15 +25,10 @@ public class PlayerController : MonoBehaviour
     {
         float moveVertical = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown("w") && (rb2d.velocity.y == 0.0f))
+        if (Input.GetKeyDown("space") && (rb2d.velocity.y == 0.0f))
         {
             gravity = gravity * -1;
             m_Animator.SetInteger("Correr", 1);
-            
-           
-
-          
-            
             
 
         }
