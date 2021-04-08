@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,8 +14,11 @@ public class PlayerController : MonoBehaviour
     private Animator m_Animator;
     float timer;
     Boolean gir;
-   
-    
+
+    //vida
+    private int vida;
+    public Text contvida;
+
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +65,16 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("porta"))
         {
             SceneManager.LoadScene("victoria");
+        }
+
+        if (collision.gameObject.CompareTag("enemic"))
+        {
+            if (vida == 3)
+            {
+               
+                vida = vida -1;
+                contvida.text = "x: " + vida.ToString();
+            }
         }
     }
 
