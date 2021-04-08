@@ -35,10 +35,10 @@ public class Menu : MonoBehaviour
 
     public void retorna()
     {
-        SceneManager.LoadScene("nivell_1");
+        SceneManager.LoadScene("nivell1");
     }
     public void comença()
     {
-        SceneManager.LoadScene("nivell_1");
+        SceneManager.LoadScene("nivell1");
     }
 }
