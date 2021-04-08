@@ -79,7 +79,11 @@ public class PlayerController : MonoBehaviour
             {
                 SceneManager.LoadScene("mort");
             }
-            }
-    }
+        }
+        if (collision.gameObject.CompareTag("vida"))
+        {
+            vida = vida + 1;
+        }
+        }
 
 }
