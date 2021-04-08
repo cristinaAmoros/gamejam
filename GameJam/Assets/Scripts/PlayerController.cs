@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     Boolean gir;
 
     //vida
-    private int vida;
+    private int vida = 3;
     public Text contvida;
 
 
@@ -67,15 +67,19 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("victoria");
         }
 
-        if (collision.gameObject.CompareTag("enemic"))
+        if (collision.gameObject.CompareTag("Enemic"))
         {
-            if (vida == 3)
+            if (vida <= 3)
             {
                
                 vida = vida -1;
                 contvida.text = "x: " + vida.ToString();
             }
-        }
+            if (vida == 0)
+            {
+                SceneManager.LoadScene("mort");
+            }
+            }
     }
 
 }
