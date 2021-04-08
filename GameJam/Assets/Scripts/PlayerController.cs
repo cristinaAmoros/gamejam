@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     float timer;
     Boolean gir;
     public AudioSource cop;
-
+    public AudioSource cor;
     //vida
     private int vida = 3;
     public Text contvida;
@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
             vida = vida + 1;
             contvida.text = "x: " + vida.ToString();
             Destroy(collision.gameObject);
+            cor.Play();
         }
         }
 
