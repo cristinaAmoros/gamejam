@@ -58,7 +58,12 @@ public class GhoulMovement : MonoBehaviour
             Destroy(this.gameObject);
 
         }
-        speed = -speed;
+        if (collision.gameObject.CompareTag("paretg"))
+        {
+            speed = -speed;
+
+        }
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

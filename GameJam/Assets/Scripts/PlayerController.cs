@@ -83,6 +83,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("vida"))
         {
             vida = vida + 1;
+            contvida.text = "x: " + vida.ToString();
+            Destroy(collision.gameObject);
         }
         }
 
