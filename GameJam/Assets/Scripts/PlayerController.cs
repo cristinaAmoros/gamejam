@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Animator m_Animator;
     float timer;
     Boolean gir;
+    public AudioSource cop;
 
     //vida
     private int vida = 3;
@@ -74,6 +75,7 @@ public class PlayerController : MonoBehaviour
                
                 vida = vida -1;
                 contvida.text = "x: " + vida.ToString();
+                cop.Play();
             }
             if (vida == 0)
             {
