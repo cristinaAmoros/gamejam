@@ -65,6 +65,10 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("porta"))
         {
+            SceneManager.LoadScene("nivell_fi");
+        }
+        if (collision.CompareTag("porta_fi"))
+        {
             SceneManager.LoadScene("victoria");
         }
 
@@ -81,6 +85,11 @@ public class PlayerController : MonoBehaviour
             {
                 SceneManager.LoadScene("mort");
             }
+        }
+        if (collision.gameObject.CompareTag("Enemic_fi"))
+        {
+            SceneManager.LoadScene("mort");
+
         }
         if (collision.gameObject.CompareTag("vida"))
         {

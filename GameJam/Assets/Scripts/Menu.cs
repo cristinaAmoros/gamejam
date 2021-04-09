@@ -41,4 +41,8 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("nivell1");
     }
+    public void nivell_final()
+    {
+        SceneManager.LoadScene("nivell_fi");
+    }
 }

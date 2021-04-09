@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/nivell1.unity
     guid: 12c69a6b62f1e574b86a844e8b2624e0
   - enabled: 1
+    path: Assets/Scenes/nivell_fi.unity
+    guid: e7f510496bea08e40bec3a9d0bf8ec71
+  - enabled: 1
     path: Assets/Scenes/mort.unity
     guid: a4ea24aa747e38145b9c174da898edaf
   - enabled: 1
